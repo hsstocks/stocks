@@ -11,7 +11,7 @@
     <button id="aapl-button-sell">Sell for <span id="aapl-price-sell"></span>$</button>
   </body>
   <script>
-    if (Storage.length>0){
+    if (localStorage.length>0){
       var money = localStorage.getItem("money");
       var aaplShares = localStorage.getItem("aaplShares");
       var spent = localStorage.getItem("spent");
