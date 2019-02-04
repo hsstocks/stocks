@@ -48,6 +48,9 @@
       spent+=input.value*aaplPrice;
       aaplShares+=parseInt(input.value);
       shares.innerHTML = aaplShares;
+      if (Math.random()<0.1){
+      aaplPrice += 1;
+    } 
     }
     function sellAapl(){
       money+=parseInt(input.value)*aaplPrice;
@@ -55,11 +58,11 @@
       spent-=input.value*aaplPrice;
       aaplShares-=parseInt(input.value);
       shares.innerHTML = aaplShares;
+      if (Math.random()<0.1){
+      aaplPrice += 1;
+    } 
     }
     button2.addEventListener("click",sellAapl);
     button.addEventListener("click", buyAapl);
-    if (Math.random()<0.01){
-      aaplPrice += 1;
-    } 
   </script>
 </html>
