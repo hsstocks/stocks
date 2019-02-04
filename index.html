@@ -53,17 +53,12 @@
         spent+=input.value*aaplPrice;
         aaplShares+=parseInt(input.value);
         shares.innerHTML = aaplShares;
-        if (Math.random()<0.1){
-          aaplPrice += 1;
-          currentPrice.innerHTML = aaplPrice;
-        } 
         moneySpan.innerHTML = money;
       } else {
         alert("Not enough money");
       }
       localStorage.setItem("money",money);
       localStorage.setItem("aaplShares",aaplShares);
-      localStorage.setItem("aaplPrice",aaplPrice);
       localStorage.setItem("spent",spent);
     }
     function sellAapl(){
@@ -72,10 +67,6 @@
         spent-=input.value*aaplPrice;
         aaplShares-=parseInt(input.value);
         shares.innerHTML = aaplShares;
-        if (Math.random()<0.1){
-         aaplPrice += 1;
-         currentPrice.innerHTML = aaplPrice;
-        }
         moneySpan.innerHTML = money;
       } else {
         alert("You don't have that many shares");
@@ -85,7 +76,6 @@
       }
       localStorage.setItem("money",money);
       localStorage.setItem("aaplShares",aaplShares);
-      localStorage.setItem("aaplPrice",aaplPrice);
       localStorage.setItem("spent",spent);
     }
     function updatePrices(){
