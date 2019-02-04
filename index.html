@@ -3,7 +3,7 @@
 <head><title>Holy Spirit Stocks</title></head>
   <body><p id="aapl">You own <span id="aapl-shares">0</span> shares of AAPL - Apple</p>
     <p>The price of AAPL is <span id="current-price"></span> dollars a share</p>
-    <p>Your return is <span id="return"></span></p>
+    <p>Your return is <span id="return"></span>$</p>
     <input id="aapl-buy">
     <button id="aapl-button-buy">Buy for <span id="aapl-price-buy"></span>$</button>
     <button id="aapl-button-sell">Sell for <span id="aapl-price-sell"></span>$</button>
@@ -75,6 +75,7 @@
       }
       if (spent<0) {
         alert("Good investment");
+        document.getElementById("return").innerHTML = spent;
       }
     }
     button2.addEventListener("click",sellAapl);
