@@ -32,7 +32,7 @@
     var currentPrice = document.getElementById("current-price");
     var returnSpan = document.getElementById("return");
     var moneySpan = document.getElementById("money");
-    var request = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&outputsize=compact&interval=1min&symbol=AAPL&apikey=9QUUWA924INBMGKV"
+    var request = "https://api.iextrading.com/1.0/stock/aapl/price"
     var req = new XMLHttpRequest();
     req.open("GET",request);
     req.responseType = "json";
