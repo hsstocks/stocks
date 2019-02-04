@@ -2,6 +2,7 @@
 <html lang="en">
 <head><title>Holy Spirit Stocks</title></head>
   <body><p id="aapl">You own <span id="aapl-shares">0</span> shares of AAPL - Apple</p>
+    <p>The price of AAPL is <span id = "current-price"></span>dollars a share</p>
     <input id="aapl-buy">
     <button id="aapl-button-buy">Buy for <span id="aapl-price-buy"></span>$</button>
     <button id="aapl-button-sell">Sell for <span id="aapl-price-sell"></span>$</button>
@@ -57,5 +58,8 @@
     }
     button2.addEventListener("click",sellAapl);
     button.addEventListener("click", buyAapl);
+    if (Math.floor(Math.random*20)) === 1{
+      aaplPrice += 1
+    } 
   </script>
 </html>
