@@ -38,10 +38,7 @@
     req.responseType = "json";
     req.send();
     req.onload = function(){
-      var response = req.response;
-      var data = JSON.parse(response);
-      var aaplPrice = data;
-      alert(data);
+     console.log(req.response);
     }
     currentPrice.innerHTML = aaplPrice;
     returnSpan.innerHTML = 0;
