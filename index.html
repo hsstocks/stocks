@@ -44,7 +44,7 @@
     var price2 = document.getElementById("aapl-price-sell");
     var currentPrice = document.getElementById("current-price");
     function buyAapl(){
-      if (money > parseInt(input.value)*aaplPrice){\
+      if (money > parseInt(input.value)*aaplPrice){
         money-=parseInt(input.value)*aaplPrice;
         price.innerHTML = parseInt(input.value)*aaplPrice;
         spent+=input.value*aaplPrice;
