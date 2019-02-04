@@ -42,6 +42,7 @@
     var shares = document.getElementById("aapl-shares");
     var price = document.getElementById("aapl-price-buy");
     var price2 = document.getElementById("aapl-price-sell");
+    var currentPrice = document.getElementById("current-price");
     function buyAapl(){
       money-=parseInt(input.value)*aaplPrice;
       price.innerHTML = parseInt(input.value)*aaplPrice;
@@ -49,8 +50,9 @@
       aaplShares+=parseInt(input.value);
       shares.innerHTML = aaplShares;
       if (Math.random()<0.1){
-      aaplPrice += 1;
-    } 
+        currentPrice.innerHTML = aaplPrice;
+        aaplPrice += 1;
+      } 
     }
     function sellAapl(){
       money+=parseInt(input.value)*aaplPrice;
@@ -59,8 +61,9 @@
       aaplShares-=parseInt(input.value);
       shares.innerHTML = aaplShares;
       if (Math.random()<0.1){
-      aaplPrice += 1;
-    } 
+        aaplPrice += 1;
+        currentPrice.innerHTML = aaplPrice;
+      } 
     }
     button2.addEventListener("click",sellAapl);
     button.addEventListener("click", buyAapl);
