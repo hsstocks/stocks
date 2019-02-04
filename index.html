@@ -3,7 +3,8 @@
 <head><title>Holy Spirit Stocks</title></head>
   <body><p id="aapl">You own <span id="aapl-shares">0</span> shares of AAPL - Apple</p>
     <input id="aapl-buy">
-    <button id="aapl-button">Buy for <span id="aapl-price"></span>$</button>
+    <button id="aapl-button-buy">Buy for <span id="aapl-price-buy"></span>$</button>
+    <button id="aapl-button-sell">Sell for <span id="aapl-price-sell"></span>$</button>
   <!-- TradingView Widget BEGIN -->
   <div class="tradingview-widget-container">
   <div id="tradingview_7e18e"></div>
@@ -35,9 +36,11 @@
     var aaplPrice = 10;
     var spent = 0;
     var input = document.getElementById("aapl-buy");
-    var button = document.getElementById("aapl-button");
+    var button = document.getElementById("aapl-button-buy");
+    var button2 = document.getElementById("aapl-button-sell");
     var shares = document.getElementById("aapl-shares");
-    var price = document.getElementById("aapl-price");
+    var price = document.getElementById("aapl-price-buy");
+    var price2 = document.getElementById("aapl-price-sell");
     function buyAapl(){
       money-=parseInt(input.value)*aaplPrice;
       price.innerHTML = parseInt(input.value)*aaplPrice;
@@ -45,6 +48,14 @@
       aaplShares+=parseInt(input.value);
       shares.innerHTML = aaplShares;
     }
+    function sellAapl(){
+      money+=parseInt(input.value)*aaplPrice;
+      price2.innerHTML = parseInt(input.value)*aaplPrice;
+      spent-=input.value*aaplPrice;
+      applShares-=parseInt(input.value);
+      shares.innerHTML = aaplShares;
+    }
+    button2.addEventListener("click",sellAapl);
     button.addEventListener("click", buyAapl);
   </script>
 </html>
