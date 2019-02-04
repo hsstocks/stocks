@@ -44,6 +44,7 @@
     var price = document.getElementById("aapl-price-buy");
     var price2 = document.getElementById("aapl-price-sell");
     var currentPrice = document.getElementById("current-price");
+    var return = document.getElementById("return");
     function buyAapl(){
       if (money >= parseInt(input.value)*aaplPrice){
         money-=parseInt(input.value)*aaplPrice;
@@ -75,7 +76,7 @@
       }
       if (spent<0) {
         alert("Good investment");
-        document.getElementById("return").innerHTML = spent;
+        return.innerHTML = spent;
       }
     }
     button2.addEventListener("click",sellAapl);
