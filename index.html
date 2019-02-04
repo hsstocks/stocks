@@ -41,7 +41,7 @@
     req.onload = function(){
      aaplPrice = req.response;
     }
-    currentPrice.innerHTML = aaplPrice;
+    currentPrice.innerHTML = parseFloat(aaplPrice);
     returnSpan.innerHTML = 0;
     price.value = 0;
     price2.value = 0;
