@@ -33,7 +33,7 @@
     var money = 100000;
     var applShares = 0;
     var applPrice = 10;
-    var applSpent = 0;
+    var spent = 0;
     var input = document.getElementById("appl-buy");
     var button = document.getElementById("appl-button");
     var shares = document.getElementById("appl-shares");
@@ -41,7 +41,7 @@
     function buyAapl(){
       money-=input.value*applPrice;
       price.innerHTML = input.value*applPrice;
-      aaplSpent+=input.value*applPrice;
+      spent+=input.value*applPrice;
       applShares+=input.value;
       shares.innerHTML = applShares;
       print("hello");
