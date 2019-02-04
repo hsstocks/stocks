@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head><title>Holy Spirit Stocks</title></head>
-  <body><p id="aapl">You own <span id="aapl-shares">0</span> shares of AAPL - Apple</p>
+  <body>
+    <p>You have <span id="money"></span>$</p>
+    <p id="aapl">You own <span id="aapl-shares">0</span> shares of AAPL - Apple</p>
     <p>The price of AAPL is <span id="current-price"></span> dollars a share</p>
     <p>Your return is <span id="return"></span>$</p>
     <input id="aapl-buy">
@@ -21,10 +23,12 @@
     var price2 = document.getElementById("aapl-price-sell");
     var currentPrice = document.getElementById("current-price");
     var returnSpan = document.getElementById("return");
+    var moneySpan = document.getElementById("money");
     currentPrice.innerHTML = aaplPrice;
     returnSpan.innerHTML = 0;
-    price.value = 0
-    price2.value = 0
+    price.value = 0;
+    price2.value = 0;
+    moneySpan.innerHTML = money;
     function buyAapl(){
       if (money >= (parseInt(input.value)*aaplPrice)){
         money-=parseInt(input.value)*aaplPrice;
@@ -35,6 +39,7 @@
           aaplPrice += 1;
           currentPrice.innerHTML = aaplPrice;
         } 
+        moneySpan.innerHTML = money;
       } else {
         alert("Not enough money");
       }
@@ -49,6 +54,7 @@
          aaplPrice += 1;
          currentPrice.innerHTML = aaplPrice;
         }
+        moneySpan.innerHTML = money;
       } else {
         alert("You don't have that many shares");
       }
