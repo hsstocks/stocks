@@ -12,10 +12,10 @@
   </body>
   <script>
     if (localStorage.length>0){
-      var money = localStorage.getItem("money");
-      var aaplShares = localStorage.getItem("aaplShares");
-      var spent = localStorage.getItem("spent");
-      var aaplPrice = localStorage.getItem("aaplPrice");
+      var money = parseInt(localStorage.getItem("money"));
+      var aaplShares = parseInt(localStorage.getItem("aaplShares"));
+      var spent = parseInt(localStorage.getItem("spent"));
+      var aaplPrice = parseInt(localStorage.getItem("aaplPrice"));
     } else {
       var money = 100000;
       var aaplShares = 0;
