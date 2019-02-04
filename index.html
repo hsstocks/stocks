@@ -26,7 +26,6 @@
     function buyAapl(){
       if (money >= parseInt(input.value)*aaplPrice){
         money-=parseInt(input.value)*aaplPrice;
-        price.innerHTML = parseInt(input.value)*aaplPrice;
         spent+=input.value*aaplPrice;
         aaplShares+=parseInt(input.value);
         shares.innerHTML = aaplShares;
@@ -41,7 +40,6 @@
     function sellAapl(){
       if (aaplShares >= parseInt(input.value)){
         money+=parseInt(input.value)*aaplPrice;
-        price2.innerHTML = parseInt(input.value)*aaplPrice;
         spent-=input.value*aaplPrice;
         aaplShares-=parseInt(input.value);
         shares.innerHTML = aaplShares;
@@ -56,6 +54,11 @@
         returnSpan.innerHTML = 0-spent;
       }
     }
+    function updatePrices(){
+      price.innerHTML = parseInt(input.value)*aaplPrice;
+      price2.innerHTML = parseInt(input.value)*aaplPrice;
+    }
+    input.addEventListener("input",updatePrices);
     button2.addEventListener("click",sellAapl);
     button.addEventListener("click", buyAapl);
   </script>
