@@ -45,6 +45,8 @@
     var price2 = document.getElementById("aapl-price-sell");
     var currentPrice = document.getElementById("current-price");
     var returnSpan = document.getElementById("return");
+    currentPrice.innerHTML = aaplPrice;
+    returnSpan.innerHTML = 0;
     function buyAapl(){
       if (money >= parseInt(input.value)*aaplPrice){
         money-=parseInt(input.value)*aaplPrice;
@@ -75,7 +77,6 @@
         alert("You don't have that many shares");
       }
       if (spent<0) {
-        alert("Good investment");
         returnSpan.innerHTML = 0-spent;
       }
     }
