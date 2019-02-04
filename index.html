@@ -2,7 +2,7 @@
 <html lang="en">
 <head><title>Holy Spirit Stocks</title></head>
   <body><p id="aapl">You own <span id="aapl-shares">0</span> shares of AAPL - Apple</p>
-    <p>The price of AAPL is <span id = "current-price"></span>dollars a share</p>
+    <p>The price of AAPL is <span id="current-price"></span>dollars a share</p>
     <input id="aapl-buy">
     <button id="aapl-button-buy">Buy for <span id="aapl-price-buy"></span>$</button>
     <button id="aapl-button-sell">Sell for <span id="aapl-price-sell"></span>$</button>
@@ -50,8 +50,8 @@
       aaplShares+=parseInt(input.value);
       shares.innerHTML = aaplShares;
       if (Math.random()<0.1){
-        currentPrice.innerHTML = aaplPrice;
         aaplPrice += 1;
+        currentPrice.innerHTML = aaplPrice;
       } 
     }
     function sellAapl(){
