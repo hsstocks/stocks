@@ -5,7 +5,7 @@
     <input id="appl-buy">
     <button id="aapl-button">Buy for <span id="appl-price"></span>$</button>
   <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container">
   <div id="tradingview_7e18e"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL chart</span></a> by TradingView</div>
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
@@ -24,6 +24,10 @@
   "allow_symbol_change": true,
   "container_id": "tradingview_7e18e"
 });
+  </script>
+</div>
+<!-- TradingView Widget END --></body>
+  <script>
     var money = 100000;
     var applShares = 0;
     var applPrice = 10;
@@ -41,6 +45,4 @@
     };
     button.addEventListener("click", buyAapl)
   </script>
-</div>
-<!-- TradingView Widget END --></body>
 </html>
