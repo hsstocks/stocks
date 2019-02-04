@@ -23,6 +23,8 @@
     var returnSpan = document.getElementById("return");
     currentPrice.innerHTML = aaplPrice;
     returnSpan.innerHTML = 0;
+    price.innerHTML = 0
+    price2.innerHTML = 0
     function buyAapl(){
       if (money >= parseInt(input.value)*aaplPrice){
         money-=parseInt(input.value)*aaplPrice;
