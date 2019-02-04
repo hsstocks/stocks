@@ -15,15 +15,12 @@
       var money = parseInt(localStorage.getItem("money"));
       var aaplShares = parseInt(localStorage.getItem("aaplShares"));
       var spent = parseInt(localStorage.getItem("spent"));
-      var aaplPrice = parseInt(localStorage.getItem("aaplPrice"));
     } else {
       var money = 100000;
       var aaplShares = 0;
-      var aaplPrice = 10;
       var spent = 0;
       localStorage.setItem("money",money);
       localStorage.setItem("aaplShares",aaplShares);
-      localStorage.setItem("aaplPrice",aaplPrice);
       localStorage.setItem("spent",spent);
     }
     var input = document.getElementById("aapl-buy");
@@ -35,6 +32,17 @@
     var currentPrice = document.getElementById("current-price");
     var returnSpan = document.getElementById("return");
     var moneySpan = document.getElementById("money");
+    var request = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&outputsize=compact&interval=1min&symbol=AAPL&apikey=9QUUWA924INBMGKV"
+    var req = new XMLHttpRequest();
+    req.open("GET",request);
+    req.responseType = "json";
+    req.send();
+    req.onload = function(){
+      var response = req.response;
+      var data = JSON.parse(response);
+      var aaplPrice = data;
+      alert(data);
+    }
     currentPrice.innerHTML = aaplPrice;
     returnSpan.innerHTML = 0;
     price.value = 0;
