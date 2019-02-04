@@ -44,26 +44,34 @@
     var price2 = document.getElementById("aapl-price-sell");
     var currentPrice = document.getElementById("current-price");
     function buyAapl(){
-      money-=parseInt(input.value)*aaplPrice;
-      price.innerHTML = parseInt(input.value)*aaplPrice;
-      spent+=input.value*aaplPrice;
-      aaplShares+=parseInt(input.value);
-      shares.innerHTML = aaplShares;
-      if (Math.random()<0.1){
-        aaplPrice += 1;
-        currentPrice.innerHTML = aaplPrice;
-      } 
+      if (money > parseInt(input.value)*aaplPrice){\
+        money-=parseInt(input.value)*aaplPrice;
+        price.innerHTML = parseInt(input.value)*aaplPrice;
+        spent+=input.value*aaplPrice;
+        aaplShares+=parseInt(input.value);
+        shares.innerHTML = aaplShares;
+        if (Math.random()<0.1){
+          aaplPrice += 1;
+          currentPrice.innerHTML = aaplPrice;
+        } 
+      } else {
+        alert("Not enough money")
+      }
     }
     function sellAapl(){
-      money+=parseInt(input.value)*aaplPrice;
-      price2.innerHTML = parseInt(input.value)*aaplPrice;
-      spent-=input.value*aaplPrice;
-      aaplShares-=parseInt(input.value);
-      shares.innerHTML = aaplShares;
-      if (Math.random()<0.1){
-        aaplPrice += 1;
-        currentPrice.innerHTML = aaplPrice;
-      } 
+      if (aaplShares > parseInt(input.value)){
+        money+=parseInt(input.value)*aaplPrice;
+        price2.innerHTML = parseInt(input.value)*aaplPrice;
+        spent-=input.value*aaplPrice;
+        aaplShares-=parseInt(input.value);
+        shares.innerHTML = aaplShares;
+        if (Math.random()<0.1){
+         aaplPrice += 1;
+         currentPrice.innerHTML = aaplPrice;
+        }
+      } else {
+        alert("You don't have that many shares")
+      }
     }
     button2.addEventListener("click",sellAapl);
     button.addEventListener("click", buyAapl);
