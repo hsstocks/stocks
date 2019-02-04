@@ -11,10 +11,21 @@
     <button id="aapl-button-sell">Sell for <span id="aapl-price-sell"></span>$</button>
   </body>
   <script>
-    var money = 100000;
-    var aaplShares = 0;
-    var aaplPrice = 10;
-    var spent = 0;
+    if (Storage.length>0){
+      var money = localStorage.getItem("money");
+      var aaplShares = localStorage.getItem("aaplShares");
+      var spent = localStorage.getItem("spent");
+      var aaplPrice = localStorage.getItem("aaplPrice");
+    } else {
+      var money = 100000;
+      var aaplShares = 0;
+      var aaplPrice = 10;
+      var spent = 0;
+      localStorage.setItem("money",money);
+      localStorage.setItem("aaplShares",aaplShares);
+      localStorage.setItem("aaplPrice",aaplPrice);
+      localStorage.setItem("spent",spent);
+    }
     var input = document.getElementById("aapl-buy");
     var button = document.getElementById("aapl-button-buy");
     var button2 = document.getElementById("aapl-button-sell");
@@ -43,6 +54,10 @@
       } else {
         alert("Not enough money");
       }
+      localStorage.setItem("money",money);
+      localStorage.setItem("aaplShares",aaplShares);
+      localStorage.setItem("aaplPrice",aaplPrice);
+      localStorage.setItem("spent",spent);
     }
     function sellAapl(){
       if (aaplShares >= parseInt(input.value)){
@@ -61,6 +76,10 @@
       if (spent<0) {
         returnSpan.innerHTML = 0-spent;
       }
+      localStorage.setItem("money",money);
+      localStorage.setItem("aaplShares",aaplShares);
+      localStorage.setItem("aaplPrice",aaplPrice);
+      localStorage.setItem("spent",spent);
     }
     function updatePrices(){
       price.innerHTML = parseInt(input.value)*aaplPrice;
