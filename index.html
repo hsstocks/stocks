@@ -39,12 +39,11 @@
     var shares = document.getElementById("aapl-shares");
     var price = document.getElementById("aapl-price");
     function buyAapl(){
-      money-=input.value*aaplPrice;
-      price.innerHTML = input.value*aaplPrice;
+      money-=parseInt(input.value)*aaplPrice;
+      price.innerHTML = parseInt(input.value)*aaplPrice;
       spent+=input.value*aaplPrice;
-      aaplShares+=input.value;
+      aaplShares+=parseInt(input.value);
       shares.innerHTML = aaplShares;
-      print("hello");
     }
     button.addEventListener("click", buyAapl);
   </script>
